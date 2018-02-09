@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './NavBar/NavBar';
+import Connections from './Connections/Connections';
+import {getFriends} from './Data/db';
+//import friends from './Data/db';
+//import Button from './UI/Button';
+
 
 class App extends Component {
+  state = {
+    friends: getFriends(),
+}
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='app'>
+        <NavBar searchText='find something' />
+        <Connections friends={this.state.friends}/>
       </div>
     );
   }
