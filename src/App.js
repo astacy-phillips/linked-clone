@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar/NavBar';
 import Connections from './Connections/Connections';
-import {getFriends} from './Data/db';
+import {getConnections} from './dummy-data';
 //import friends from './Data/db';
 //import Button from './UI/Button';
 
 
 class App extends Component {
   state = {
-    friends: getFriends(),
+    connections: getConnections(),
 }
   render() {
     return (
       <div className='app'>
         <NavBar searchText='find something' />
-        <Connections friends={this.state.friends}/>
+        <Connections connections={this.state.connections}/>
       </div>
     );
   }

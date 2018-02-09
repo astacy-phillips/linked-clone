@@ -17,12 +17,12 @@ class Connections extends React.Component {
                 onMouseEnter={() => {console.log('entered')}}
                 onClick={this.toggleFriends}
                 >
-                    {showFriends === true ? ('Hide') : ('Show')} Friends
+                    {showFriends === true ? ('Hide') : ('Show')} Connections
                 </button>
                 {this.state.displayFriends === true ? (
                     <ul>
-                        {this.props.friends.map((friend) => {
-                            return <li key={friend.id}>{friend.name}</li>
+                        {this.props.connections.map((connection) => {
+                            return <li key={connection.id}>{connection.firstName} {connection.lastName} {connection.jobTitle}</li>
                         })}
                     </ul>
                 ) : null} 
